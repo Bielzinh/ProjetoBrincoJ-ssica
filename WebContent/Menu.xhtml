@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:p="http://primefaces.org/ui"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title><ui:insert name="titulo">Menu Principal</ui:insert></title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	
+</h:head>
+<h:body>
+<h:form>
+<p:panel>
+<div align="center">
+ <p:panelMenu style="width:300px">
+ 
+ 
+
+ <p:submenu label="Menu Principal">
+ <p:menuitem value="Novo Brinco" url="criarBrinco.jsf" icon="ui-icon-disk" />
+ <p:menuitem value="Brincos Cadastrados" url="listarBrinco.jsf"  icon="ui-icon-disk"/>
+ <p:menuitem value="Sair" action="#{brincoMB.irBrincolist}"  icon="ui-icon-arrowrefresh-1-w" />
+ </p:submenu>
+ </p:panelMenu> 
+</div>
+
+
+</p:panel>
+</h:form>
+</h:body>
+</html>

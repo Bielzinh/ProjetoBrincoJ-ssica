@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:p="http://primefaces.org/ui"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title><ui:insert name="titulo">Cadastrar Brinco</ui:insert></title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	
+</h:head>
+<h:body>
+<h:form>
+<p:panel >
+<div align="center">
+<h1 style="color:red;"> Cadastro de Brincos</h1>
+<hr size="1"></hr>
+
+<p:panelGrid columns="2">
+<p:outputLabel for="tipo" value="Tipo do Brinco"/>
+<p:inputText id="tipo" value="#{brincoMB.b.tipo}"/>
+
+<p:outputLabel for="precovenda" value="Valor do Brinco"/>
+<p:inputText id="precovenda" value="#{brincoMB.b.precovenda}"/>
+
+<p:outputLabel for="cor" value="Cor do Brinco"/>
+<p:inputText id="cor" value="#{brincoMB.b.cor}"/>
+
+<p:commandButton ajax="false" value="Salvar Brinco" action="#{brincoMB.SalvarBrinco}"/>
+
+
+</p:panelGrid>
+
+</div>
+</p:panel>
+</h:form>
+</h:body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:p="http://primefaces.org/ui"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title><ui:insert name="titulo">Menu Principal</ui:insert></title>
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<link rel="stylesheet" type="text/css" href="css/estilo.css" />
+	
+</h:head>
+<h:body>
+<h:form>
+<p:panel>
+
+
+<p:commandButton value="Novo Brinco" action="#{brincoMB.irBrinco}"></p:commandButton>
+<div align="center">
+		<p:panelGrid   columns="2">
+			
+
+			<p:outputLabel for="tipo" value="Filtrar Pelo Tipo do Brinco" />
+			<p:inputText id="tipo" value="#{brincoMB.filtroTipo}"
+				required="false"></p:inputText>
+				
+			
+		<p:commandButton  value="Pesquisar" ajax="false" action="#{brincoMB.filtrarBrinco}"/>	
+		
+		</p:panelGrid>
+		
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+</div>
+
+<p:dataTable id="tabela" value="#{brincoMB.brincos}" var="brin"
+			rows="4" paginator="true" rowsPerPageTemplate="5,10,15">
+
+			<p:column>
+				<f:facet name="header">Opções</f:facet>
+				<p:panelGrid columns="1">
+					<p:commandButton value="Alterar" ajax="false"
+						action="#{brincoMB.AlterarBrinco(brin.codigo)}" />
+					<p:commandButton value="Excluir" ajax="false"
+						action="#{brincoMB.ExcluirBrinco(brin.codigo)}" />
+				</p:panelGrid>
+			</p:column>
+
+
+			<p:column>
+				<f:facet name="header">Tipo do Brinco</f:facet>
+				<h:outputText value="#{brin.tipo}"></h:outputText>
+			</p:column>
+			<p:column>
+				<f:facet name="header">Valor do Brinco</f:facet>
+				<h:outputText value="#{brin.precovenda}"></h:outputText>
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Cor do Brinco</f:facet>
+				<h:outputText value="#{brin.cor}"></h:outputText>
+			</p:column>
+			
+			
+		</p:dataTable>
+</p:panel>
+</h:form>
+</h:body>
+</html>
