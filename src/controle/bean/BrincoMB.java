@@ -89,10 +89,6 @@ public class BrincoMB {
 		return "criarBrinco";
 	}
 	
-	public String VoltarMenu(){
-		
-	            return"criarBrinco";
-	}
 	
 	public String irBrincolist() {
 
